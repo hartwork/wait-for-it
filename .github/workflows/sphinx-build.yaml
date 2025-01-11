@@ -9,17 +9,14 @@ on:
 
 jobs:
   docs:
-    strategy:
-      matrix:
-        python-version: [3.9, 3.13]  # oldest and most recent version supported
     runs-on: ubuntu-24.04
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python 3.13
       uses: actions/setup-python@v5
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.13
     - name: Install dependencies
       run: |
         pip3 install -r docs/requirements.txt
@@ -29,6 +26,6 @@ jobs:
     - name: Store documentation
       uses: actions/upload-artifact@v4
       with:
-        name: "wait_for_it_docs_html_${{ github.sha }}_python_${{ matrix.python-version }}"
+        name: "wait_for_it_docs_html_${{ github.sha }}"
         path: docs/build/html/
         if-no-files-found: error
