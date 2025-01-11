@@ -22,9 +22,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        pip3 install \
-          recommonmark \
-          sphinx
+        pip3 install -r docs/requirements.txt
     - name: Build documentation
       run: |
         make -C docs/ html
