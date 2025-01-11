@@ -7,6 +7,10 @@ on:
     - cron: '0 16 * * 5'  # Every Friday 4pm
   workflow_dispatch:
 
+# Drop permissions to minimum for security
+permissions:
+  contents: read
+
 jobs:
   docs:
     runs-on: ubuntu-24.04
