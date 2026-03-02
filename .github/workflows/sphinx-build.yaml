@@ -28,7 +28,7 @@ jobs:
       run: |
         make -C docs/ html
     - name: Store documentation
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: "wait_for_it_docs_html_${{ github.sha }}"
         path: docs/build/html/
