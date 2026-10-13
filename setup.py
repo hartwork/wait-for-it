@@ -39,7 +39,6 @@ setuptools.setup(
         "Programming Language :: Python :: 3.13",
         "Programming Language :: Python :: 3.14",
         "Programming Language :: Python :: 3.15",
-        "License :: OSI Approved :: MIT License",
         "Operating System :: POSIX",
         "Topic :: Internet",
         "Topic :: Utilities",
